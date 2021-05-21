@@ -1,4 +1,6 @@
 R5T.T0017 - File system path description types library. (Like RootedRelative, DirectoryIndicated, etc.)
 
-Goals
+GOALS:
 
+* Have an "Unknown" value for all file system path descriptor enumerations, since sometimes the value is ambiguous.
+* Be sure to use the trailing-comma convention in defining enumeration value lists to indicate the completeness of the enumeration.
