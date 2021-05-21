@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace R5T.T0017.Code
+namespace R5T.T0017
 {
     /// <summary>
     /// Stringly-typed file system path descriptor.
@@ -10,16 +10,16 @@ namespace R5T.T0017.Code
     /// <remarks>
     /// Useful in labeling example file system paths for use in testing a stringly-typed path operator.
     /// </remarks>
-    public class FileSystemPathDescriptor
+    public class PathDescriptor
     {
         #region Static
 
-        public static FileSystemPathDescriptor NewDirectoryPathDescriptor(string directoryPath,
+        public static PathDescriptor NewDirectoryPathDescriptor(string directoryPath,
             RootedOrRelative rootedOrRelative = RootedOrRelative.Rooted, // In common usage, directory paths are usually rooted.
             bool directoryIndicated = false, // In common usage, directory path usually do not end with the directory separator character.
             bool resolved = true) // In common usage, directory paths are usually always resolved.
         {
-            var output = new FileSystemPathDescriptor
+            var output = new PathDescriptor
             {
                 Path = directoryPath,
                 DirectoryOrFile = DirectoryOrFile.Directory,
@@ -30,12 +30,12 @@ namespace R5T.T0017.Code
             return output;
         }
 
-        public static FileSystemPathDescriptor NewFilePathDescriptor(string directoryPath,
+        public static PathDescriptor NewFilePathDescriptor(string directoryPath,
             RootedOrRelative rootedOrRelative = RootedOrRelative.Rooted, // In common usage, file paths are usually rooted.
             bool directoryIndicated = false, // File paths really should not end with the directory separator character.
             bool resolved = true) // In common usage, file paths are usually always resolved.
         {
-            var output = new FileSystemPathDescriptor
+            var output = new PathDescriptor
             {
                 Path = directoryPath,
                 DirectoryOrFile = DirectoryOrFile.File,
@@ -68,7 +68,7 @@ namespace R5T.T0017.Code
         public bool Resolved { get; set; }
 
 
-        public FileSystemPathDescriptor()
+        public PathDescriptor()
         {
         }
     }
